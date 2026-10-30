@@ -1,0 +1,26 @@
+# File: icdc03g.xst
+# Cross-section process definition file for "icdc03g" ICD CMOS 0.3um single metal technology
+# 
+# ************************************************************************
+#
+#       L-Edit
+#Step Layer Name		Depth  Label	 [Angle[offset]]	Comment
+#----------------------------------------------------------------------
+gd	-			1.0	"p-"				#   1. Substrate
+id	"N-WELL"		0.6	"n-"		80		#   2. N-Well Implant/Diffusion
+e	field_oxide		0.3	-		90		#   3. Isolation Trench etch
+gd	field_oxide		0.3	-				#   4. Field Oxide Deposition
+e	"ACTIVE_AREA"		0.3	-		90		#   5. Planarize Field Oxide
+gd	gate_oxide		0.04	-				#   6. Gate Oxide Deposition
+gd	POLYSILICON		0.26	-				#   7. Polysilicon Deposition
+e	not_poly		0.3	-		90		#   8. Polysilicon Etch + Gate Oxide Etch
+id	p_diffusion		0.2	"p+"		90		#   9. p-diffusion Implant/Diffusion
+id	n_diffusion		0.2	"n+"		90		#  10. n-diffusion Implant/Diffusion
+gd	-			0.5	-				#  11. Dielectric Deposition
+e	planarize_dielectric_1	0.3	-		90		#  12. Planarize Dielectric
+e	CONTACTS		0.2	-		90		#  13. Contact Cut
+e	diffusion_contacts	0.3	-		90		#       Contact Cut
+gd	METAL1			0.7	-				#  14. Metal1 Deposition
+e	planarize_metal1_1	0.2	-		90		#  15. Planarize Metal1
+e	planarize_metal1_2	0.3	-		90		#       Planarize Metal1
+e	not_metal1		0.2	-		90		#  16. Metal1 Etch
